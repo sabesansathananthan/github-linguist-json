@@ -10,7 +10,6 @@
 
 ## Keys
 
-|---|---|
 | fs_name | Optional field. Only necessary as a replacement for the sample directory name if the language name is not a valid filename under the Windows filesystem (e.g., if it contains an asterisk). |
 | type | Either data, programming, markup, prose, or nil |
 | aliases | An Array of additional aliases (implicitly includes name.downcase) |
@@ -26,4 +25,3 @@
 | color | CSS hex color to represent the language. Only used if type is "programming" or "markup". |
 | tm_scope | The TextMate scope that represents this programming language. This should match one of the scopes listed in the grammars.yml file. Use "none" if there is no grammar for this language.|
 | group | Name of the parent language. Languages in a group are counted in the statistics as the parent language. |
-|---|---|
