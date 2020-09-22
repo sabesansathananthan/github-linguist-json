@@ -10,8 +10,12 @@
 
 ## Keys
 
+| Key     | Description                                                                                                                                                                                 |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | fs_name | Optional field. Only necessary as a replacement for the sample directory name if the language name is not a valid filename under the Windows filesystem (e.g., if it contains an asterisk). |
+
 | type | Either data, programming, markup, prose, or nil |
+
 | aliases | An Array of additional aliases (implicitly includes name.downcase) |
 | ace_mode | A String name of the Ace Mode used for highlighting whenever a file is edited. This must match one of the filenames in http://git.io/3XO_Cg. Use "text" if a mode does not exist. |
 | codemirror_mode | A String name of the CodeMirror Mode used for highlighting whenever a file is edited. This must match a mode from https://git.io/vi9Fx |
