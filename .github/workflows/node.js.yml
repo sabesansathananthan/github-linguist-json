@@ -10,11 +10,12 @@ on:
 
 jobs:
   build:
+   
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.16.0]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -23,5 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: node index.js
+      env:
+        CI: true
 
 
