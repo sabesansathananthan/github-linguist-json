@@ -3,6 +3,7 @@ const cors = require("cors");
 const fs = require("fs");
 const yaml = require("js-yaml");
 const https = require("https");
+const cron = require("node-cron");
 
 const app = express();
 const port = 4444;
@@ -19,22 +20,25 @@ app.listen(process.env.PORT || port, () => {
 const url =
   "https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml";
 
-let myURL = new URL(url);
-let body = [];
-https
-  .request(myURL, (res) => {
-    res.on("data", (chunk) => body.push(chunk));
-    res.on("end", () =>
-      fs.writeFile(
-        "github.yml",
-        Buffer.concat(body).toString(),
-        (err, data) => {
-          if (err) return err;
-        }
-      )
-    );
-  })
-  .end();
+cron.schedule("0 0 1 * *", () => {
+  let myURL = new URL(url);
+  let body = [];
+  https
+    .request(myURL, (res) => {
+      res.on("data", (chunk) => body.push(chunk));
+      res.on("end", () =>
+        fs.writeFile(
+          "github.yml",
+          Buffer.concat(body).toString(),
+          (err, data) => {
+            if (err) return err;
+          }
+        )
+      );
+    })
+    .end();
+});
+
 
 app.get("/", (req, res) => {
   try {
