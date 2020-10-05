@@ -4,8 +4,28 @@
 
 ## JSON Structure
 
+#### route `/`
+
+It will give the all GitHub linguist details.
+
 ```JSON
 "JavaScript":{"type":"programming","tm_scope":"source.js","ace_mode":"javascript","codemirror_mode":"javascript","codemirror_mime_type":"text/javascript","color":"#f1e05a","aliases":["js","node"],"extensions":[".js","._js",".bones",".cjs",".es",".es6",".frag",".gs",".jake",".jsb",".jscad",".jsfl",".jsm",".jss",".mjs",".njs",".pac",".sjs",".ssjs",".xsjs",".xsjslib"],"filenames":["Jakefile"],"interpreters":["chakra","d8","gjs","js","node","nodejs","qjs","rhino","v8","v8-shell"],"language_id":183}
+```
+
+#### route `/lang`
+
+It will only give the GitHub linguist color code of the particular language.
+
+```JSON
+{
+    "1C Enterprise": "#814CCC",
+    "ABAP": "#E8274B",
+    "AGS Script": "#B9D9FF",
+    "AL Code": "#3AA2B5",
+    "AMPL": "#E6EFBB",
+    "ANTLR": "#9DC3FF",
+}
+
 ```
 
 ## Keys
