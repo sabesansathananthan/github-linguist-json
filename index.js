@@ -39,7 +39,6 @@ cron.schedule("0 0 1 * *", () => {
     .end();
 });
 
-
 app.get("/", (req, res) => {
   try {
     let fileContents = fs.readFileSync("./github.yml", "utf8");
@@ -47,6 +46,21 @@ app.get("/", (req, res) => {
 
     console.log(data);
     res.send(data);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+app.get("/lang", (req, res) => {
+  try {
+    let fileContents = fs.readFileSync("./github.yml", "utf8");
+    let data = yaml.safeLoad(fileContents);
+    const response = {};
+
+    for (const entry in data) {
+      if (data[entry].color) response[entry] = data[entry].color;
+    }
+    res.json(response);
   } catch (e) {
     console.log(e);
   }
