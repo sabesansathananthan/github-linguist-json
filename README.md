@@ -6,7 +6,7 @@
 
 #### route `/`
 
-It will give the all GitHub linguist details.
+It will give all the GitHub linguist details.
 
 ```JSON
 "JavaScript":{"type":"programming","tm_scope":"source.js","ace_mode":"javascript","codemirror_mode":"javascript","codemirror_mime_type":"text/javascript","color":"#f1e05a","aliases":["js","node"],"extensions":[".js","._js",".bones",".cjs",".es",".es6",".frag",".gs",".jake",".jsb",".jscad",".jsfl",".jsm",".jss",".mjs",".njs",".pac",".sjs",".ssjs",".xsjs",".xsjslib"],"filenames":["Jakefile"],"interpreters":["chakra","d8","gjs","js","node","nodejs","qjs","rhino","v8","v8-shell"],"language_id":183}
@@ -14,7 +14,7 @@ It will give the all GitHub linguist details.
 
 #### route `/lang`
 
-It will only give the GitHub linguist color code of the particular language.
+It will only give GitHub the linguist color code for the particular language.
 
 ```JSON
 {
